@@ -1,0 +1,250 @@
+country,continent,sub_region,region_code,sub_region_code
+Afghanistan,Asia,Southern Asia,142,34
+Aland Islands,Europe,Northern Europe,150,154
+Albania,Europe,Southern Europe,150,39
+Algeria,Africa,Northern Africa,2,15
+American Samoa,Oceania,Polynesia,9,61
+Andorra,Europe,Southern Europe,150,39
+Angola,Africa,Middle Africa,2,17
+Anguilla,Americas,Caribbean,19,29
+Antarctica,,,,
+Antigua and Barbuda,Americas,Caribbean,19,29
+Argentina,Americas,South America,19,5
+Armenia,Asia,Western Asia,142,145
+Aruba,Americas,Caribbean,19,29
+Australia,Oceania,Australia and New Zealand,9,53
+Austria,Europe,Western Europe,150,155
+Azerbaijan,Asia,Western Asia,142,145
+Bahamas,Americas,Caribbean,19,29
+Bahrain,Asia,Western Asia,142,145
+Bangladesh,Asia,Southern Asia,142,34
+Barbados,Americas,Caribbean,19,29
+Belarus,Europe,Eastern Europe,150,151
+Belgium,Europe,Western Europe,150,155
+Belize,Americas,Central America,19,13
+Benin,Africa,Western Africa,2,11
+Bermuda,Americas,Northern America,19,21
+Bhutan,Asia,Southern Asia,142,34
+Bolivia (Plurinational State of),Americas,South America,19,5
+"Bonaire, Sint Eustatius and Saba",Americas,Caribbean,19,29
+Bosnia and Herzegovina,Europe,Southern Europe,150,39
+Botswana,Africa,Southern Africa,2,18
+Bouvet Island,,,,
+Brazil,Americas,South America,19,5
+British Indian Ocean Territory,,,,
+Brunei Darussalam,Asia,South-Eastern Asia,142,35
+Bulgaria,Europe,Eastern Europe,150,151
+Burkina Faso,Africa,Western Africa,2,11
+Burundi,Africa,Eastern Africa,2,14
+Cambodia,Asia,South-Eastern Asia,142,35
+Cameroon,Africa,Middle Africa,2,17
+Canada,Americas,Northern America,19,21
+Cabo Verde,Africa,Western Africa,2,11
+Cayman Islands,Americas,Caribbean,19,29
+Central African Republic,Africa,Middle Africa,2,17
+Chad,Africa,Middle Africa,2,17
+Chile,Americas,South America,19,5
+China,Asia,Eastern Asia,142,30
+Christmas Island,,,,
+Cocos (Keeling) Islands,,,,
+Colombia,Americas,South America,19,5
+Comoros,Africa,Eastern Africa,2,14
+Congo,Africa,Middle Africa,2,17
+Congo (Democratic Republic of the),Africa,Middle Africa,2,17
+Cook Islands,Oceania,Polynesia,9,61
+Costa Rica,Americas,Central America,19,13
+Côte d'Ivoire,Africa,Western Africa,2,11
+Croatia,Europe,Southern Europe,150,39
+Cuba,Americas,Caribbean,19,29
+Curaçao,Americas,Caribbean,19,29
+Cyprus,Asia,Western Asia,142,145
+Czech Republic,Europe,Eastern Europe,150,151
+Denmark,Europe,Northern Europe,150,154
+Djibouti,Africa,Eastern Africa,2,14
+Dominica,Americas,Caribbean,19,29
+Dominican Republic,Americas,Caribbean,19,29
+Ecuador,Americas,South America,19,5
+Egypt,Africa,Northern Africa,2,15
+El Salvador,Americas,Central America,19,13
+Equatorial Guinea,Africa,Middle Africa,2,17
+Eritrea,Africa,Eastern Africa,2,14
+Estonia,Europe,Northern Europe,150,154
+Ethiopia,Africa,Eastern Africa,2,14
+Falkland Islands (Malvinas),Americas,South America,19,5
+Faroe Islands,Europe,Northern Europe,150,154
+Fiji,Oceania,Melanesia,9,54
+Finland,Europe,Northern Europe,150,154
+France,Europe,Western Europe,150,155
+French Guiana,Americas,South America,19,5
+French Polynesia,Oceania,Polynesia,9,61
+French Southern Territories,,,,
+Gabon,Africa,Middle Africa,2,17
+Gambia,Africa,Western Africa,2,11
+Georgia,Asia,Western Asia,142,145
+Germany,Europe,Western Europe,150,155
+Ghana,Africa,Western Africa,2,11
+Gibraltar,Europe,Southern Europe,150,39
+Greece,Europe,Southern Europe,150,39
+Greenland,Americas,Northern America,19,21
+Grenada,Americas,Caribbean,19,29
+Guadeloupe,Americas,Caribbean,19,29
+Guam,Oceania,Micronesia,9,57
+Guatemala,Americas,Central America,19,13
+Guernsey,Europe,Northern Europe,150,154
+Guinea,Africa,Western Africa,2,11
+Guinea-Bissau,Africa,Western Africa,2,11
+Guyana,Americas,South America,19,5
+Haiti,Americas,Caribbean,19,29
+Heard Island and McDonald Islands,,,,
+Holy See,Europe,Southern Europe,150,39
+Honduras,Americas,Central America,19,13
+Hong Kong,Asia,Eastern Asia,142,30
+Hungary,Europe,Eastern Europe,150,151
+Iceland,Europe,Northern Europe,150,154
+India,Asia,Southern Asia,142,34
+Indonesia,Asia,South-Eastern Asia,142,35
+Iran (Islamic Republic of),Asia,Southern Asia,142,34
+Iraq,Asia,Western Asia,142,145
+Ireland,Europe,Northern Europe,150,154
+Isle of Man,Europe,Northern Europe,150,154
+Israel,Asia,Western Asia,142,145
+Italy,Europe,Southern Europe,150,39
+Jamaica,Americas,Caribbean,19,29
+Japan,Asia,Eastern Asia,142,30
+Jersey,Europe,Northern Europe,150,154
+Jordan,Asia,Western Asia,142,145
+Kazakhstan,Asia,Central Asia,142,143
+Kenya,Africa,Eastern Africa,2,14
+Kiribati,Oceania,Micronesia,9,57
+Korea (Democratic People's Republic of),Asia,Eastern Asia,142,30
+Korea (Republic of),Asia,Eastern Asia,142,30
+Kuwait,Asia,Western Asia,142,145
+Kyrgyzstan,Asia,Central Asia,142,143
+Lao People's Democratic Republic,Asia,South-Eastern Asia,142,35
+Latvia,Europe,Northern Europe,150,154
+Lebanon,Asia,Western Asia,142,145
+Lesotho,Africa,Southern Africa,2,18
+Liberia,Africa,Western Africa,2,11
+Libya,Africa,Northern Africa,2,15
+Liechtenstein,Europe,Western Europe,150,155
+Lithuania,Europe,Northern Europe,150,154
+Luxembourg,Europe,Western Europe,150,155
+Macao,Asia,Eastern Asia,142,30
+Macedonia (the former Yugoslav Republic of),Europe,Southern Europe,150,39
+Madagascar,Africa,Eastern Africa,2,14
+Malawi,Africa,Eastern Africa,2,14
+Malaysia,Asia,South-Eastern Asia,142,35
+Maldives,Asia,Southern Asia,142,34
+Mali,Africa,Western Africa,2,11
+Malta,Europe,Southern Europe,150,39
+Marshall Islands,Oceania,Micronesia,9,57
+Martinique,Americas,Caribbean,19,29
+Mauritania,Africa,Western Africa,2,11
+Mauritius,Africa,Eastern Africa,2,14
+Mayotte,Africa,Eastern Africa,2,14
+Mexico,Americas,Central America,19,13
+Micronesia (Federated States of),Oceania,Micronesia,9,57
+Moldova (Republic of),Europe,Eastern Europe,150,151
+Monaco,Europe,Western Europe,150,155
+Mongolia,Asia,Eastern Asia,142,30
+Montenegro,Europe,Southern Europe,150,39
+Montserrat,Americas,Caribbean,19,29
+Morocco,Africa,Northern Africa,2,15
+Mozambique,Africa,Eastern Africa,2,14
+Myanmar,Asia,South-Eastern Asia,142,35
+Namibia,Africa,Southern Africa,2,18
+Nauru,Oceania,Micronesia,9,57
+Nepal,Asia,Southern Asia,142,34
+Netherlands,Europe,Western Europe,150,155
+New Caledonia,Oceania,Melanesia,9,54
+New Zealand,Oceania,Australia and New Zealand,9,53
+Nicaragua,Americas,Central America,19,13
+Niger,Africa,Western Africa,2,11
+Nigeria,Africa,Western Africa,2,11
+Niue,Oceania,Polynesia,9,61
+Norfolk Island,Oceania,Australia and New Zealand,9,53
+Northern Mariana Islands,Oceania,Micronesia,9,57
+Norway,Europe,Northern Europe,150,154
+Oman,Asia,Western Asia,142,145
+Pakistan,Asia,Southern Asia,142,34
+Palau,Oceania,Micronesia,9,57
+"Palestine, State of",Asia,Western Asia,142,145
+Panama,Americas,Central America,19,13
+Papua New Guinea,Oceania,Melanesia,9,54
+Paraguay,Americas,South America,19,5
+Peru,Americas,South America,19,5
+Philippines,Asia,South-Eastern Asia,142,35
+Pitcairn,Oceania,Polynesia,9,61
+Poland,Europe,Eastern Europe,150,151
+Portugal,Europe,Southern Europe,150,39
+Puerto Rico,Americas,Caribbean,19,29
+Qatar,Asia,Western Asia,142,145
+Réunion,Africa,Eastern Africa,2,14
+Romania,Europe,Eastern Europe,150,151
+Russian Federation,Europe,Eastern Europe,150,151
+Rwanda,Africa,Eastern Africa,2,14
+Saint Barthélemy,Americas,Caribbean,19,29
+"Saint Helena, Ascension and Tristan da Cunha",Africa,Western Africa,2,11
+Saint Kitts and Nevis,Americas,Caribbean,19,29
+Saint Lucia,Americas,Caribbean,19,29
+Saint Martin (French part),Americas,Caribbean,19,29
+Saint Pierre and Miquelon,Americas,Northern America,19,21
+Saint Vincent and the Grenadines,Americas,Caribbean,19,29
+Samoa,Oceania,Polynesia,9,61
+San Marino,Europe,Southern Europe,150,39
+Sao Tome and Principe,Africa,Middle Africa,2,17
+Saudi Arabia,Asia,Western Asia,142,145
+Senegal,Africa,Western Africa,2,11
+Serbia,Europe,Southern Europe,150,39
+Seychelles,Africa,Eastern Africa,2,14
+Sierra Leone,Africa,Western Africa,2,11
+Singapore,Asia,South-Eastern Asia,142,35
+Sint Maarten (Dutch part),Americas,Caribbean,19,29
+Slovakia,Europe,Eastern Europe,150,151
+Slovenia,Europe,Southern Europe,150,39
+Solomon Islands,Oceania,Melanesia,9,54
+Somalia,Africa,Eastern Africa,2,14
+South Africa,Africa,Southern Africa,2,18
+South Georgia and the South Sandwich Islands,,,,
+South Sudan,Africa,Eastern Africa,2,14
+Spain,Europe,Southern Europe,150,39
+Sri Lanka,Asia,Southern Asia,142,34
+Sudan,Africa,Northern Africa,2,15
+Suriname,Americas,South America,19,5
+Svalbard and Jan Mayen,Europe,Northern Europe,150,154
+Swaziland,Africa,Southern Africa,2,18
+Sweden,Europe,Northern Europe,150,154
+Switzerland,Europe,Western Europe,150,155
+Syrian Arab Republic,Asia,Western Asia,142,145
+"Taiwan, Province of China",Asia,Eastern Asia,142,30
+Tajikistan,Asia,Central Asia,142,143
+"Tanzania, United Republic of",Africa,Eastern Africa,2,14
+Thailand,Asia,South-Eastern Asia,142,35
+Timor-Leste,Asia,South-Eastern Asia,142,35
+Togo,Africa,Western Africa,2,11
+Tokelau,Oceania,Polynesia,9,61
+Tonga,Oceania,Polynesia,9,61
+Trinidad and Tobago,Americas,Caribbean,19,29
+Tunisia,Africa,Northern Africa,2,15
+Turkey,Asia,Western Asia,142,145
+Turkmenistan,Asia,Central Asia,142,143
+Turks and Caicos Islands,Americas,Caribbean,19,29
+Tuvalu,Oceania,Polynesia,9,61
+Uganda,Africa,Eastern Africa,2,14
+Ukraine,Europe,Eastern Europe,150,151
+United Arab Emirates,Asia,Western Asia,142,145
+United Kingdom of Great Britain and Northern Ireland,Europe,Northern Europe,150,154
+United States of America,Americas,Northern America,19,21
+United States Minor Outlying Islands,,,,
+Uruguay,Americas,South America,19,5
+Uzbekistan,Asia,Central Asia,142,143
+Vanuatu,Oceania,Melanesia,9,54
+Venezuela (Bolivarian Republic of),Americas,South America,19,5
+Viet Nam,Asia,South-Eastern Asia,142,35
+Virgin Islands (British),Americas,Caribbean,19,29
+Virgin Islands (U.S.),Americas,Caribbean,19,29
+Wallis and Futuna,Oceania,Polynesia,9,61
+Western Sahara,Africa,Northern Africa,2,15
+Yemen,Asia,Western Asia,142,145
+Zambia,Africa,Eastern Africa,2,14
+Zimbabwe,Africa,Eastern Africa,2,14

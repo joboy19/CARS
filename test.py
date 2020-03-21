@@ -7,11 +7,19 @@ from scipy.sparse.linalg import svds
 k = 2
 
 
-ratings = pd.read_csv("ratings copy.csv")
-books = pd.read_csv("clean_test.csv")
+ratings = pd.read_csv("data/mm/listening_data.csv")
 #print(ratings.head())
 
-rdf = ratings.pivot_table(index="user_id",columns="book_id",values="rating").fillna(0)
+df_ratings = ratings.drop(columns=["longitude", "latitude", "country-id", "city-id", "artist-id"])
+print(df_ratings.head())
+
+df_ratings["rating"] = 1
+print(df_ratings.head())
+
+rdf = df_ratings.pivot_table(index="user-id",columns="track-id",values="rating").fillna(0) 
+print(rdf.head())
+
+"""
 r = rdf.values
 mean = np.mean(r, axis=1)
 demean = r - mean.reshape(-1, 1)
@@ -40,9 +48,6 @@ newP = np.array([5,0,0,0,5])
 new_person_value = np.matmul(newP, Vt)
 print(new_person_value)
 
-"""
-for i in range(5):
-    print(np.dot(newP, VtS[:,i:i+1]))
 """
 
 
