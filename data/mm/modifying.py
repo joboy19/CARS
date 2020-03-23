@@ -98,32 +98,20 @@ def get_context_user(user_id):
 
     vals = [0 for x in range()]
 
-
-def countries():
-    filee = open("country_mapping.txt", "r", encoding="utf-8")
-
-    out = []
-    count = 0
-
+def list_regions():
+    filee = open("country_test.csv", "r", encoding="utf-8")
+    out = set()
     for x in filee:
-        line = x.strip().split("\t")
-        this_line = [line[0], line[1]]
-        fileee = open("countryContinent.csv", "r")
-        for y in fileee:
-            line2 = y.strip().split(",")
-            if line[1].lower() in line2[0].lower():
-                this_line.append(line2[2])
-                count += 1
-        out.append(this_line)
-        
-        
+        line = x.strip().split(",")
+        if line[2] == "":
+            print(line)
+        out.add(line[2])
+    
     print(out)
-    
-    filee = open("country_test.csv", "a", encoding="utf-8", newline="")
-    writer = csv.writer(filee, delimiter=",")
-    writer.writerows(out)
 
-    
+list_regions()
 
-countries()
+
+
+
         
