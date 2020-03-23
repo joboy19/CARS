@@ -3,6 +3,14 @@ import random
 import string
 import numpy as np
 
+regions = ['Middle Africa', 'Western Africa', 'Central America', 'South America', 'South-Eastern Asia', 'Eastern Asia', 'Eastern Africa', 'South Africa', 'Southern Africa', 'Northern Europe', 'Western Asia', 'Southern Asia', 'Southern Europe', 'Eastern Asian', 'Caribbean', 'Eastern Europe', 'Australia and New Zealand', 'South Asia', 'Central Asia', 'Africa', 'Nothern Europe', 'Western Europe', 'Northern Africa', 'Northern America']
+country_to_region = {}
+countries = open("country_test.csv", "r", encoding="utf-8")
+for x in countries:
+    line = x.strip().split(",")
+    if line[2] != "sub_region":
+        country_to_region[line[0]] = regions.index(line[2])
+
 def prep():
     a = []
     with open("listening_data.txt", "r", encoding="utf-8") as filee:
@@ -47,6 +55,8 @@ def get_ratings2():
     filee.close()
     fileeU.close()
 
+
+#for editing the file
 def get_ratings_all():
     filee = open("listening_data.csv", "r", encoding="utf-8")
 
@@ -73,10 +83,21 @@ def get_ratings_all():
         if len(user_dict[x]) > 10:
             out_dict[x] = user_dict[x]
             list3.append(len(user_dict[x]))
-    print(out_dict[random.choice(list(out_dict.keys()))])
-    
+
     filee.close()
+    filee = open("listening_data.csv", "r", encoding="utf-8")
+    out = []
+    for x in filee:
+        line = x.strip().split(",")
+        if line[0] in out_dict.keys():
+            out.append(line)
+    filee.close()
+    out_file = open("listening_data_test.csv", "a", encoding="utf-8", newline="")
+    writer = csv.writer(out_file, delimiter=",")
+    writer.writerows(out)
     #adjust ratings to 1-5 scale
+
+get_ratings_all()
 
 def get_ratings_user(user_id):
     filee = open("listening_data.csv", "r", encoding="utf-8")
@@ -93,23 +114,61 @@ def get_ratings_user(user_id):
 
     filee.close()
 
-def get_context_user(user_id):
-    filee = open("listening_data.csv", "r", encoding="utf-8")
 
-    vals = [0 for x in range()]
+
+
+#done
+def get_context_user(user_id):
+    filee = open("country_test.csv", "r", encoding="utf-8")
+    countries = list(filee)
+    filee2 = open("listening_data.csv", "r", encoding="utf-8")
+
+    vals = [0 for x in range(24)]
+    count = 0
+
+    for x in filee2:
+        line = x.strip().split(",")
+        if line[0] == user_id:
+            count += 1
+            vals[country_to_region[line[3]]] += 1
+    
+    if count > 0:
+        vals = list(map(lambda x: x/count, vals))
+    return vals
+
+#done
+def get_context_track(track_id):
+    filee = open("country_test.csv", "r", encoding="utf-8")
+    countries = list(filee)
+    filee2 = open("listening_data.csv", "r", encoding="utf-8")
+
+    vals = [0 for x in range(24)]
+    count = 0
+
+    for x in filee2:
+        line = x.strip().split(",")
+        if line[6] == track_id:
+            count += 1
+            vals[country_to_region[line[3]]] += 1
+    
+    vals = list(map(lambda x: x/count, vals))
+    return vals
+
+    
 
 def list_regions():
     filee = open("country_test.csv", "r", encoding="utf-8")
     out = set()
     for x in filee:
         line = x.strip().split(",")
-        if line[2] == "":
+        try:
+            out.add(line[2])
+        except:
             print(line)
-        out.add(line[2])
     
     print(out)
 
-list_regions()
+
 
 
 

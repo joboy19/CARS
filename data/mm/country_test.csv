@@ -1,5 +1,5 @@
-country-id,country,sub_region,,,
-0,Brazil,South America,,,
+country-id,country,sub_region
+0,Brazil,South America
 1,Indonesia,South-Eastern Asia
 2,United Kingdom,Northern Europe
 3,United States,Northern America
@@ -62,7 +62,7 @@ country-id,country,sub_region,,,
 60,Armenia,Western Asia
 61,Estonia,Northern Europe
 62,South Korea,Eastern Asia
-63,Taiwan,Asia
+63,Taiwan,Eastern Asia
 64,Austria,Western Europe
 65,Jordan,Western Asia
 66,The Bahamas,Caribbean
@@ -76,7 +76,7 @@ country-id,country,sub_region,,,
 75,Paraguay,South America
 76,El Salvador,Central America
 77,Costa Rica,Central America
-78,Republic of Lithuania
+78,Republic of Lithuania,Eastern Europe
 79,Jamaica,Caribbean
 80,Romania,Eastern Europe
 81,Namibia,Southern Africa
@@ -93,7 +93,7 @@ country-id,country,sub_region,,,
 92,Iraq,Western Asia
 93,Luxemburg,Western Europe
 94,Iceland,Northern Europe
-95,Fiji,Melanesia
+95,Fiji,Australia and New Zealand
 96,Nicaragua,Central America
 97,Zambia,Eastern Africa
 98,Macedonia,Southern Europe
@@ -128,7 +128,7 @@ country-id,country,sub_region,,,
 127,Benin,Western Africa
 128,Senegal,Western Africa
 129,Nepal,Southern Asia
-130,British Virgin Islands
+130,British Virgin Islands,Central America
 131,Lesotho,Southern Africa
 132,Cyprus,Western Asia
 133,Andorra,Southern Europe
@@ -139,7 +139,7 @@ country-id,country,sub_region,,,
 138,Guyana,South America
 139,Rwanda,Eastern Africa
 140,Angola,Middle Africa
-141,Netherlands Antilles
+141,Netherlands Antilles,Central America
 142,Mongolia,Eastern Asia
 143,Mauritius,Eastern Africa
 144,Gabon,Middle Africa
@@ -148,10 +148,10 @@ country-id,country,sub_region,,,
 147,St. Lucia,South America
 148,St Helena Ascension and Tristan da Cunha,South Africa
 149,Madagascar,Eastern Africa
-150,Myanmar,South-Eastern Asia
-151,Palestinian Territories
+150,Myanmar,South Asia
+151,Palestinian Territories,Western Asia
 152,Burkina Faso,Western Africa
-153,Samoa,Polynesia
+153,Samoa,Australia and New Zealand
 154,Falkland Islands,South America
 155,Monaco,Western Europe
 156,Vatican City State,Southern Europe
@@ -160,7 +160,7 @@ country-id,country,sub_region,,,
 159,Libya,Northern Africa
 160,Anguilla,Caribbean
 161,Equatorial Guinea,Middle Africa
-162,Democratic Republic of Congo
+162,Democratic Republic of Congo,Middle Africa
 163,Congo,Middle Africa
 164,Afghanistan,Southern Asia
 165,North Korea,Eastern Asian
@@ -175,6 +175,6 @@ country-id,country,sub_region,,,
 174,Seychelles,Eastern Africa
 175,Mayotte,Eastern Africa
 176,Ethiopia,Eastern Africa
-177,French Polynesia,Polynesia
+177,French Polynesia,Australia and New Zealand
 178,Saint Kitts and Nevis,Caribbean
 179,Mauritania,Western Africa
