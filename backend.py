@@ -123,15 +123,25 @@ def add_book():
     writer.writerows(data)
     return str(book_id)
 
+@app.route("/get_countries", methods=["GET"])
+def get_countries():
+    out = rc.get_countries()
+    return json.dumps(out)
+
 @app.route("/get_recoms", methods=["GET"])
 def get_recoms():
     out = rc.get_recommendation(session["id"], 10)
     return json.dumps(out)
 
-@app.route("/search_books", methods=["GET"])
+
+@app.route("/get_recoms", methods=["POST"])
+def change_context():
+    rc.calc_svd(context_val=request.form["country"])
+
+@app.route("/search_tracks", methods=["GET"])
 def search_books():
-    book = request.args["bookname"]
-    with open("data/books.csv", "r", encoding='utf-8', newline='\n') as data1:
+    book = request.args["trackname"]
+    with open(PATH_TO_TRACK, "r", encoding='utf-8') as data1:
         for line in data1:
             data = line.rstrip().split(",")
             if data[1] == book:

@@ -91,6 +91,24 @@
                     </div>
                   </div>
                   <div class="card mt-3">
+                    <div class="card-body">
+                          <form id="form_country">
+                              <label id="rating-label">Select Country</label>
+                              <div id="form_country" class="form-row">
+                                <div class="col">
+                                  <select id="country_select" class="custom-select">
+                                    <option selected>Pick a Country</option>
+                                  </select>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-secondary" id="confirm-button">Confirm</button>
+                                </div>
+                              
+                              </div>
+                          </form>
+                    </div>
+                  </div>
+                  <div class="card mt-3">
                       <div class="card-body">
                             <form id="form_book">
                                 <label id="label-addbook">Add a book to the dataset:</label>
@@ -115,11 +133,11 @@
                   <div class="card mt-3">
                       <div class="card-body">
                             <form id="form-search">
-                                <label id="label-searchbook">Search For a Book:</label>
+                                <label id="label-searchbook">Search For a Song:</label>
                                 <div id="form_book">
 
                                   
-                                  <input id="searchname" class="form-control" type="test" placeholder="Book Name">
+                                  <input id="searchname" class="form-control" type="test" placeholder="Track Name">
                                   <button type="submit" class="btn btn-secondary mt-1" id="search-button">Search</button>
                                 
                                 </div>
@@ -146,7 +164,7 @@
                   </table>
                 </div>
                 <div class = "col">
-                  <label id="label-recom">Your Recommendations:</label>
+                  <label id="label-recom">Recommendations Based On Your Listens:</label>
                   <table class = "table" id ="table2">
                     <thead>
                       <tr>

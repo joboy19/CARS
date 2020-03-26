@@ -31,7 +31,7 @@ def user_generate():
             writer.writerow([x, ''.join([random.choice(string.ascii_letters + string.digits) for n in range(8)]), country, country, country])
 
 
-#for editing the file
+#get all of the ratings, with no context
 def get_ratings_all():
     filee = open(PATH_TO_LISTENING_DATA, "r", encoding="utf-8")
 
@@ -49,6 +49,45 @@ def get_ratings_all():
             user_dict[line[0]] = {}
             user_dict[line[0]][line[6]] = 1
 
+    filee.close()
+    list_out = []
+    #adjust ratings to 1-5 scale
+    for x in user_dict.keys():
+        val = int(user_dict[x][max(user_dict[x], key = user_dict[x].get)])/5
+        this_one = [(x, k, math.ceil(v/val)) for k, v in user_dict[x].items()]
+        list_out = list_out + this_one
+    
+    print("---SYSTEM---: Total unique ratings:", len(list_out))
+    return list_out
+
+
+def check_context(context, rating_line):
+    if country_to_sub_region[rating_line[3]] == context:
+        return True
+    else:
+        return False
+
+#get all of the ratings with current context
+def get_ratings_all_context(context):
+    filee = open(PATH_TO_LISTENING_DATA, "r", encoding="utf-8")
+
+    user_dict = {}
+    
+    #get ratings counts for users
+    for x in filee:
+        line = x.strip().split(",")
+        if check_context(context, line):
+            if line[0] in user_dict:
+                if line[6] in user_dict[line[0]]:
+                    user_dict[line[0]][line[6]]= user_dict[line[0]][line[6]] + 1
+                else:
+                    user_dict[line[0]][line[6]] = 1
+            else:
+                user_dict[line[0]] = {}
+                user_dict[line[0]][line[6]] = 1
+        
+
+    print(user_dict)
     filee.close()
     list_out = []
     #adjust ratings to 1-5 scale
@@ -159,12 +198,14 @@ def list_regions():
 
 regions = ['Middle Africa', 'Western Africa', 'Central America', 'South America', 'South-Eastern Asia', 'Eastern Asia', 'Eastern Africa', 'South Africa', 'Southern Africa', 'Northern Europe', 'Western Asia', 'Southern Asia', 'Southern Europe', 'Eastern Asian', 'Caribbean', 'Eastern Europe', 'Australia and New Zealand', 'South Asia', 'Central Asia', 'Africa', 'Nothern Europe', 'Western Europe', 'Northern Africa', 'Northern America']
 country_to_region = {}
-countries = open(PATH_TO_COUNTRIES, "r", encoding="utf-8")
-for x in countries:
+countries = {}
+countries_file = open(PATH_TO_COUNTRIES, "r", encoding="utf-8")
+for x in countries_file:
     line = x.strip().split(",")
     if line[2] != "sub_region":
         country_to_region[line[0]] = regions.index(line[2])
-countries.close()
+        countries[line[0]] = line[1]
+countries_file.close()
 
 tracks = open(PATH_TO_TRACK, "r", encoding="utf-8")
 reader = csv.reader(tracks)
@@ -188,6 +229,13 @@ for y in open(PATH_TO_LISTENING_DATA, "r", encoding="utf-8"):
     except:
         pass
 
+def get_countries():
+    out = []
+    for x in countries:
+        out.append((x, countries[x]))
+    return out
+
+
 print("---SYSTEM---: STARTING")
 
 k = 20
@@ -198,38 +246,49 @@ for x in users:
     user_list.append(x.strip().split(",")[0])
 users.close()
 
-print("---SYSTEM---: Collecting ratings and calculating.")
-ratings_list = get_ratings_all()
-print("---SYSTEM---: Ratings collected and calculated.")
-
-df_ratings = pd.DataFrame(ratings_list, columns=["user-id", "track-id", "rating"])
-print("---SYSTEM---: Sanity Check:")
-print(df_ratings.head())
-
-df_ratings.astype({"rating":"int8"})
-
-rdf = df_ratings.pivot_table(index="user-id",columns="track-id",values="rating").fillna(0) 
-#print(rdf.head())
-
-rdf.to_hdf(PATH_TO_STORE, "data")
-
-#df = pd.read_hdf(PATH_TO_STORE)
-
-r = rdf.values
-mean = np.mean(r, axis=1)
-demean = r - mean.reshape(-1, 1)
 
 
-U, sigma, Vt = svds(demean, k=k)
+print("---SYSTEM---: SVD calculated, with no context.")
 
-sigma = np.diag(sigma)
-Us = np.matmul(U, sigma)
+def calc_svd(context_val=-1):
+    print("---SYSTEM---: Calculating SVD")
 
-vals = np.matmul(Us, Vt) + mean.reshape(-1, 1)
+    print("---SYSTEM---: Collecting ratings and calculating. Context Value:", context_val)
+    if context_val != -1:
+        ratings_list = get_ratings_all_context(context_val)
+        print("---SYSTEM---: Ratings collected and calculated, with context.")
+    else:
+        ratings_list = get_ratings_all()
+        print("---SYSTEM---: Ratings collected and calculated, without context.")
 
-print("---SYSTEM---: SVD calculated.")
+    df_ratings = pd.DataFrame(ratings_list, columns=["user-id", "track-id", "rating"])
+    print("---SYSTEM---: Sanity Check:")
+    print(df_ratings.head())
+
+    df_ratings.astype({"rating":"int8"})
+
+    rdf = df_ratings.pivot_table(index="user-id",columns="track-id",values="rating").fillna(0) 
+    #print(rdf.head())
+
+    rdf.to_hdf(PATH_TO_STORE, "data")
+
+    #df = pd.read_hdf(PATH_TO_STORE)
+
+    r = rdf.values
+    mean = np.mean(r, axis=1)
+    demean = r - mean.reshape(-1, 1)
 
 
+    U, sigma, Vt = svds(demean, k=k)
+
+    sigma = np.diag(sigma)
+    Us = np.matmul(U, sigma)
+
+    vals = np.matmul(Us, Vt) + mean.reshape(-1, 1)
+
+    print("---SYSTEM---: SVD calculated.")
+
+calc_svd()
 
 def RMSE(pred, real):
     diff = abs(real - pred)

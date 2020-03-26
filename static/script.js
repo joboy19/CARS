@@ -73,19 +73,41 @@ function update_label(value){
     if (value == "False"){
             $("#outLabel").html("The book was not found.");
     } else {
-            $("#outLabel").html("That book has ID: " + value);
+            $("#outLabel").html("That song has ID: " + value);
     }
 }
 
+function get_counties(){
+    $.ajax({
+        url: "/get_countries",
+        method:"GET",
+        success: function(data) {
+            if (data != "False"){
+                console.log(data);
+                var vals = JSON.parse(data);
+                console.log(vals);
+                for (var key in vals){
+                    var option = new Option(vals[key][1], vals[key][0]);
+                    $(option).html(vals[key][1]);
+                    $("#country_select").append(option);
+                }
+            } 
+        }
+    });
+}
 
 
 $( document ).ready(function(event){
+    get_counties();
+
     $("#button").click( function() {
         logout();
     });
     $("#nation").click( function() {
         toggle_nation();
     });
+
+    
 
     $("#button-logout").click( function() {
         $.ajax({
@@ -122,6 +144,22 @@ $( document ).ready(function(event){
           });
     });
 
+    $("#form_country").submit(function (event){
+        event.preventDefault();
+        var val = $("#country_select").val();
+        $.ajax({
+            url: "/change_context",
+            data:{
+                country: val
+            },
+            method:"post",
+            success: function(data) {
+                get_recommendations();
+            }
+
+        })
+    })
+
     $("#form_user").submit( function(event){
         event.preventDefault();
         var name = $("#username_main").val()
@@ -142,9 +180,9 @@ $( document ).ready(function(event){
     $("#form-search").submit( function(event){
         event.preventDefault();
         $.ajax({
-            url: "/search_books",
+            url: "/search_tracks",
             data: {
-                bookname: $("#searchname").val()
+                trackname: $("#searchname").val()
             },
             method:"get",
             success: function(data) {

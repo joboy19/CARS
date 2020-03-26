@@ -1,6 +1,29 @@
-add regions for those below
--> justify about cold start problem
-get interface working with user data collection
-    - display ratings (songs and listen counts)
-    - most recommended ratings
-plan report
+code:
+    add multiple context's (favourite and current)
+    modify dataset (remove longnitude and latitude)
+    explore different granualties
+
+
+
+
+
+
+
+
+implementation:
+    how to get ratings, how to get context, how pre-filtering is applied to ratings
+    output/display on screen
+
+evaluation:
+    MAE:
+        implement
+        add to methods sections
+        talk about
+    Recall/Precision
+        research
+        implement 
+        add to methods section
+        talk about
+
+plan rest of report
+-> justify about cold start problem as a limitation
