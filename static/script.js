@@ -6,13 +6,14 @@ function update_ratings(){
         method:"GET",
         success: function(data) {
             if (data != "False"){
+                console.log(data);
                 var vals = JSON.parse(data);
                 console.log(vals);
                 $("#table tbody > tr").remove();
                 for (var key in vals){
                     $('#table tbody').append('<tr><td>' + key + '</td><td>' + 
-                        vals[key][1] + '</td><td>' + vals[key][2] + 
-                        '</td><td>' + vals[key][0] + '</td></tr>');
+                        vals[key][0] + '</td><td>' + vals[key][1] + 
+                        '</td><td>' + vals[key][2] + '</td></tr>');
                 }
                 get_recommendations();
             } 
@@ -31,9 +32,8 @@ function get_recommendations(){
                 console.log(vals);
                 $("#table2 tbody > tr").remove();
                 for (var key in vals){
-                    $('#table2 tbody').append('<tr><td>' + key + '</td><td>' + 
-                        vals[key][0] + 
-                        '</td><td>' + vals[key][1] + '</td></tr>');
+                    $('#table2 tbody').append('<tr><td>' + 
+                        vals[key][0] + '</td><td>' + vals[key][2] + '</td><td>' + vals[key][1] + '</td></tr>');
                 }
             } 
         }

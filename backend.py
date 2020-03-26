@@ -2,17 +2,23 @@ import numpy as np
 import pandas as pd 
 import json
 import csv
+import recommender as rc
 
-#from recommendations import make_prediction
 from flask import Flask, render_template, request, session, url_for
 
 app = Flask(__name__)
 app.secret_key = "this_is_a_secret"
 
+PATH_TO_LISTENING_DATA = "data/mm/listening_data.csv"
+PATH_TO_USERS = "data/mm/user_data.csv"
+PATH_TO_COUNTRIES = "data/mm/country_mapping.csv"
+PATH_TO_STORE = "data/mm/store.h5"
+PATH_TO_TRACK = "data/mm/track_mapping.csv"
+PATH_TO_ARTIST = "data/mm/artist_mapping.csv"
 
 ##getID for a single user
 def getID(username):
-    with open("data/users.csv", "r", encoding='utf-8', newline='\n') as data1:
+    with open(PATH_TO_USERS, "r", encoding='utf-8', newline='\n') as data1:
         for line in data1:
             data = line.rstrip().split(",")
             if data[1] == username:
@@ -22,18 +28,10 @@ def getID(username):
 #get individual ratings for each user
 @app.route("/get_ratings", methods=["GET"])
 def get_ratings():
-    """
-    out = {}
-    with open("data/ratings.csv", "r", encoding='utf-8', newline='\n') as data1:
-        for line in data1:
-            data = line.rstrip().split(",")
-            if data[0] == session["id"]:
-                a = get_book(data[1])
-                out[data[1]] = [data[2], a[0], a[1]]
-        return json.dumps(out)
-    return "False"
-    """
-    return "False"
+    print("get ratings for user:", session["id"])
+    out = rc.get_listens_user(session["id"])
+    print("ratings:", out)
+    return json.dumps(out)
 
 #get book details from an id
 def get_book(id_):
@@ -50,7 +48,7 @@ def hello_world():
     return render_template("index.html")
 
 def checkuser(username, password):
-    with open("data/users.csv", "r", encoding='utf-8', newline='\n') as data1:
+    with open(PATH_TO_USERS, "r", encoding='utf-8', newline='\n') as data1:
         for line in data1:
             data = line.rstrip().split(",")
             if data[0] == username:
@@ -70,7 +68,7 @@ def login():
 
 @app.route("/update_details", methods=["POST"])
 def update_details():
-    r = csv.reader(open("data/users.csv"))
+    r = csv.reader(open(PATH_TO_USERS))
     data = list(r)
     for x in range(len(data)):
         if data[x][0] == session["id"]:
@@ -127,16 +125,8 @@ def add_book():
 
 @app.route("/get_recoms", methods=["GET"])
 def get_recoms():
-    """
-    out = {}
-    bookIDs = make_prediction(str(session["id"]))
-    for x in bookIDs:
-        a = get_book(str(x))
-        out[x] = [a[0], a[1]]
-    print(out)
+    out = rc.get_recommendation(session["id"], 10)
     return json.dumps(out)
-    """
-    return "True"
 
 @app.route("/search_books", methods=["GET"])
 def search_books():
@@ -156,5 +146,5 @@ def logout():
     
 
 if __name__ == '__main__':
-    app.config.update(TEMPLATES_AUTO_RELOAD = True)
-    app.run(debug=True)
+    app.config.update(TEMPLATES_AUTO_RELOAD = True) 
+    app.run(debug=True, use_reloader=False)

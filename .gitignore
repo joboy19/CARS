@@ -2,5 +2,6 @@
 /__pycache__/
 hqfl21.zip
 readme.txt
+*.h5
 /data/Music_InCarMusic/
 /data/nowplayingrs/

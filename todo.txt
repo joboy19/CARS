@@ -1,6 +1,6 @@
 add regions for those below
-create functions to get context weighting for a user or item
-prune dataset to only people with more than 10 ratings -> justify about cold start problem
-implement generic svd (no SGD) 
+-> justify about cold start problem
 get interface working with user data collection
+    - display ratings (songs and listen counts)
+    - most recommended ratings
 plan report
